@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <p class="mt-8">{{ `現在の努力値合計：${remainingTotal}/${total}` }}</p>
+    <p class="mt-8">{{ `現在の努力値合計：${sumCurrentValue}/${total}` }}</p>
   </div>
 </template>
 <script lang="ts">
@@ -104,7 +104,7 @@ export default defineComponent ({
     };
   },
   computed: {
-    remainingTotal() {
+    sumCurrentValue() {
       const sumCurrentValue: number = Object.values(this)
         .filter(value => typeof value === 'object')
         .reduce((sum, value) => sum + parseInt(value.current), 0);
