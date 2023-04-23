@@ -122,7 +122,7 @@ export default defineComponent ({
      * @param {Params} value 努力値のパラメータ(目標値と残りの値)
      * @return {number}
      */
-    remainingValue(value: Params) {
+    remainingValue(value: Params): number {
       return parseInt(value.target, 10) - parseInt(value.current, 10);
     }
   }
