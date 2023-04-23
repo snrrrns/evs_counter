@@ -68,6 +68,7 @@ export default defineComponent({
      * 努力値を更新して親コンポーネントに渡す
      *
      * @param {Event} event inputタグの入力イベント
+     * @return {void}
      */
     updateEffortValue(event: Event) {
       this.effortValue = (event.target as HTMLInputElement).value
