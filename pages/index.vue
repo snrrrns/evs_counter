@@ -105,7 +105,9 @@ export default defineComponent ({
   },
   computed: {
     remainingTotal() {
-      const sumCurrentValue = parseInt(this.hp.current) + parseInt(this.attack.current) + parseInt(this.defense.current) + parseInt(this.specialAttack.current) + parseInt(this.specialDefense.current) + parseInt(this.speed.current);
+      const sumCurrentValue: number = Object.values(this)
+        .filter(value => typeof value === 'object')
+        .reduce((sum, value) => sum + parseInt(value.current), 0);
       return sumCurrentValue;
     }
   },
