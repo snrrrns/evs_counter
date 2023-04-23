@@ -70,11 +70,7 @@ export default defineComponent({
      * @param {Event} event inputタグの入力イベント
      */
     updateEffortValue(event: Event) {
-      console.log(event);
-      
-      const newValue = (event.target as HTMLInputElement).value
-
-      this.effortValue = newValue;
+      this.effortValue = (event.target as HTMLInputElement).value
       this.$emit('update:modelValue', this.effortValue);
     },
   }
