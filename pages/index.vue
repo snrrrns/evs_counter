@@ -104,11 +104,10 @@ export default defineComponent ({
     };
   },
   computed: {
-    sumCurrentValue() {
-      const sumCurrentValue: number = Object.values(this)
+    sumCurrentValue(): number {
+      return Object.values(this)
         .filter(value => typeof value === 'object')
         .reduce((sum, value) => sum + parseInt(value.current), 0);
-      return sumCurrentValue;
     }
   },
   methods: {
