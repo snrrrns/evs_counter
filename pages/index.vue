@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <p class="mt-8">{{ `現在の努力値合計：${sumCurrentValue}/${total}` }}</p>
+    <p class="mt-8">{{ `現在の努力値合計：${sumCurrentValue}/${maxValue}` }}</p>
   </div>
 </template>
 <script lang="ts">
@@ -63,7 +63,7 @@ type EffortValues = {
   specialAttack: Params,
   specialDefense: Params,
   speed: Params,
-  total: number,
+  maxValue: number,
 }
 
 export default defineComponent ({
@@ -100,7 +100,7 @@ export default defineComponent ({
         target: '0',
         current: '0',
       },
-      total: 510,
+      maxValue: 510,
     };
   },
   computed: {
