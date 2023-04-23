@@ -1,13 +1,13 @@
 <template>
-  <div class="w-1/3">
-    <label class="block font-medium mb-2">{{ label }}</label>
+  <div class="w-1/3 flex flex-row items-center">
+    <label class="block font-medium mr-5">{{ label }}</label>
     <input
       :value="effortValue"
-      @blur="updateEffortValue"
+      @input="updateEffortValue"
       type="number"
       min="0"
       max="252"
-      class="w-full border border-gray-300 rounded-md py-2 px-3 mb-4"
+      class="w-full border border-gray-300 rounded-md py-2 px-3"
     />
   </div>
 </template>
@@ -64,7 +64,9 @@ export default defineComponent({
     },
   },
   methods: {
-    updateEffortValue(event: FocusEvent) {
+    updateEffortValue(event: Event) {
+      console.log(event);
+      
       const newValue = (event.target as HTMLInputElement).value
 
       this.effortValue = newValue;
