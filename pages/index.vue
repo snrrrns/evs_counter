@@ -104,6 +104,11 @@ export default defineComponent ({
     };
   },
   computed: {
+    /**
+     * 現在の努力値合計を返却
+     *
+     * @return {number}
+     */
     sumCurrentValue(): number {
       return Object.values(this)
         .filter(value => typeof value === 'object')
@@ -111,6 +116,12 @@ export default defineComponent ({
     }
   },
   methods: {
+    /**
+     * 目標値までの残りの値を返却
+     *
+     * @param {Params} value 努力値のパラメータ(目標値と残りの値)
+     * @return {number}
+     */
     remainingValue(value: Params) {
       return parseInt(value.target, 10) - parseInt(value.current, 10);
     }

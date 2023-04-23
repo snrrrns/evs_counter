@@ -64,6 +64,11 @@ export default defineComponent({
     },
   },
   methods: {
+    /**
+     * 努力値を更新して親コンポーネントに渡す
+     *
+     * @param {Event} event inputタグの入力イベント
+     */
     updateEffortValue(event: Event) {
       console.log(event);
       
