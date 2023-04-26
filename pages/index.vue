@@ -103,6 +103,9 @@ export default defineComponent ({
       maxValue: 510,
     };
   },
+  mounted() {
+    console.log(this.sumCurrentValue);
+  },
   computed: {
     /**
      * 現在の努力値合計を返却
@@ -112,7 +115,7 @@ export default defineComponent ({
     sumCurrentValue(): number {
       return Object.values(this)
         .filter(value => typeof value === 'object')
-        .reduce((sum, value) => sum + parseInt(value.current), 10);
+        .reduce((sum, value) => sum + parseInt(value.current, 10), 0);
     }
   },
   methods: {
