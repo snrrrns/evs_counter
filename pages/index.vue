@@ -103,9 +103,6 @@ export default defineComponent ({
       maxValue: 510,
     };
   },
-  mounted() {
-    console.log(this.sumCurrentValue);
-  },
   computed: {
     /**
      * 現在の努力値合計を返却
