@@ -112,7 +112,7 @@ export default defineComponent ({
     sumCurrentValue(): number {
       return Object.values(this)
         .filter(value => typeof value === 'object')
-        .reduce((sum, value) => sum + parseInt(value.current, 10), 0);
+        .reduce((sum, value) => sum + Number(value.current), 0);
     }
   },
   methods: {
